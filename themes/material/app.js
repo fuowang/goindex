@@ -261,9 +261,9 @@ function file_code(path){
 function file_video(path){
 	var url = window.location.origin + path;
 	var playBtn = `<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" href="potplayer://${url}"><i class="mdui-icon material-icons">&#xe038;</i>在 potplayer 中播放</a>`;
-	var playBtn2 = `<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" href="mpv://${url}"><i class="mdui-icon material-icons">&#xe038;</i>在 mpv 中播放</a>`;
 	if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
 	    playBtn = `	<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" href="intent:${url}#Intent;package=com.mxtech.videoplayer.ad;S.title=${path};end"><i class="mdui-icon material-icons">&#xe039;</i>在mxplayer中播放</a>`;
+	    var playBtn2 = ` <a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" href="intent:${url}#Intent;package=is.xyz.mpv;S.title=${path};end"><i class="mdui-icon material-icons">&#xe039;</i>在mpv中播放</a>`;
 	}
 	var content = `
 <div class="mdui-container-fluid">
